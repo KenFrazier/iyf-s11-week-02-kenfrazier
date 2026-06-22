@@ -1,0 +1,113 @@
+<style>
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.section{padding:2rem 1.5rem;border-bottom:0.5px solid var(--color-border-tertiary)}
+.section:last-child{border-bottom:none}
+.label{font-size:13px;color:var(--color-text-secondary);margin:0 0 6px;font-weight:500;letter-spacing:.03em}
+.desc{font-size:12px;color:var(--color-text-tertiary);margin:8px 0 0}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:12px}
+.section-head{font-size:15px;font-weight:500;color:var(--color-text-primary);margin:0 0 4px}
+
+/* Primary */
+.btn-primary{
+  padding:9px 22px;border-radius:var(--border-radius-md);
+  background:#534AB7;color:#EEEDFE;
+  border:none;font-size:14px;font-weight:500;cursor:pointer;
+  transition:background .15s,transform .1s;outline:none;
+}
+.btn-primary:hover{background:#3C3489}
+.btn-primary:active{transform:scale(.98);background:#26215C}
+.btn-primary:focus-visible{box-shadow:0 0 0 3px #AFA9EC}
+
+/* Secondary */
+.btn-secondary{
+  padding:9px 22px;border-radius:var(--border-radius-md);
+  background:transparent;color:var(--color-text-primary);
+  border:1.5px solid var(--color-border-primary);
+  font-size:14px;font-weight:500;cursor:pointer;
+  transition:background .15s,border-color .15s,transform .1s;outline:none;
+}
+.btn-secondary:hover{background:var(--color-background-secondary);border-color:var(--color-border-secondary)}
+.btn-secondary:active{transform:scale(.98)}
+.btn-secondary:focus-visible{box-shadow:0 0 0 3px var(--color-border-secondary)}
+
+/* Danger */
+.btn-danger{
+  padding:9px 22px;border-radius:var(--border-radius-md);
+  background:#A32D2D;color:#FCEBEB;
+  border:none;font-size:14px;font-weight:500;cursor:pointer;
+  transition:background .15s,transform .1s;outline:none;
+}
+.btn-danger:hover{background:#791F1F}
+.btn-danger:active{transform:scale(.98);background:#501313}
+.btn-danger:focus-visible{box-shadow:0 0 0 3px #F09595}
+
+/* Ghost Danger */
+.btn-danger-ghost{
+  padding:9px 22px;border-radius:var(--border-radius-md);
+  background:transparent;color:#A32D2D;
+  border:1.5px solid #A32D2D;
+  font-size:14px;font-weight:500;cursor:pointer;
+  transition:background .15s,transform .1s;outline:none;
+}
+.btn-danger-ghost:hover{background:#FCEBEB;color:#791F1F;border-color:#791F1F}
+.btn-danger-ghost:active{transform:scale(.98)}
+.btn-danger-ghost:focus-visible{box-shadow:0 0 0 3px #F09595}
+
+/* Disabled */
+.btn-disabled{
+  padding:9px 22px;border-radius:var(--border-radius-md);
+  background:var(--color-background-secondary);
+  color:var(--color-text-tertiary);
+  border:0.5px solid var(--color-border-tertiary);
+  font-size:14px;font-weight:500;cursor:not-allowed;opacity:.6;
+}
+
+/* With icons */
+.btn-icon{display:inline-flex;align-items:center;gap:7px}
+</style>
+
+<h2 class="sr-only">Four button style variants: primary, secondary, danger, and disabled — each with hover and active states demonstrated.</h2>
+
+<div class="section">
+  <p class="section-head">Primary</p>
+  <p class="label">Solid background · high emphasis</p>
+  <div class="row">
+    <button class="btn-primary btn-icon"><i class="ti ti-circle-check" aria-hidden="true"></i>Save changes</button>
+    <button class="btn-primary">Continue</button>
+    <button class="btn-primary btn-icon">Next step <i class="ti ti-arrow-right" aria-hidden="true"></i></button>
+  </div>
+  <p class="desc">Background shifts two stops darker on hover. Scale on active.</p>
+</div>
+
+<div class="section">
+  <p class="section-head">Secondary</p>
+  <p class="label">Outline · medium emphasis</p>
+  <div class="row">
+    <button class="btn-secondary btn-icon"><i class="ti ti-download" aria-hidden="true"></i>Export</button>
+    <button class="btn-secondary">Cancel</button>
+    <button class="btn-secondary btn-icon"><i class="ti ti-copy" aria-hidden="true"></i>Duplicate</button>
+  </div>
+  <p class="desc">Transparent fill; border and fill tighten on hover.</p>
+</div>
+
+<div class="section">
+  <p class="section-head">Danger</p>
+  <p class="label">Destructive actions · high and medium emphasis</p>
+  <div class="row">
+    <button class="btn-danger btn-icon"><i class="ti ti-trash" aria-hidden="true"></i>Delete account</button>
+    <button class="btn-danger">Remove</button>
+    <button class="btn-danger-ghost btn-icon"><i class="ti ti-alert-triangle" aria-hidden="true"></i>Reset all data</button>
+  </div>
+  <p class="desc">Filled red for primary destructive; ghost red for secondary destructive.</p>
+</div>
+
+<div class="section">
+  <p class="section-head">Disabled</p>
+  <p class="label">Not interactive · muted, no hover</p>
+  <div class="row">
+    <button class="btn-disabled" disabled>Save changes</button>
+    <button class="btn-disabled btn-icon" disabled><i class="ti ti-send" aria-hidden="true"></i>Submit</button>
+    <button class="btn-disabled" disabled>Continue</button>
+  </div>
+  <p class="desc">Low contrast, reduced opacity, <code>cursor: not-allowed</code>. No hover state.</p>
+</div>
