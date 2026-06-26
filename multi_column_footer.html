@@ -1,0 +1,130 @@
+<style>
+  .footer-wrap { font-family: var(--font-sans); padding: 2.5rem 0 0; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.5px solid var(--color-border-tertiary);
+  }
+  @media (max-width: 660px) {
+    .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1.5rem; }
+  }
+  @media (max-width: 400px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  .col-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-tertiary);
+    margin: 0 0 12px;
+  }
+  .col-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .col-links a { font-size: 14px; color: var(--color-text-secondary); text-decoration: none; transition: color 0.15s; }
+  .col-links a:hover { color: var(--color-text-primary); }
+  .brand-name { font-size: 17px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 6px; }
+  .brand-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 16px; }
+  .social-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .social-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 13px; color: var(--color-text-secondary);
+    border: 0.5px solid var(--color-border-tertiary);
+    border-radius: var(--border-radius-md);
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s;
+    cursor: pointer;
+  }
+  .social-btn:hover { border-color: var(--color-border-primary); color: var(--color-text-primary); }
+  .social-btn i { font-size: 15px; }
+  .newsletter-row { margin-top: 10px; display: flex; gap: 6px; }
+  .newsletter-row input { flex: 1; min-width: 0; font-size: 13px; padding: 6px 10px; border-radius: var(--border-radius-md); }
+  .newsletter-row button { font-size: 13px; padding: 6px 14px; white-space: nowrap; border-radius: var(--border-radius-md); }
+  .badge-row { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+  .badge {
+    font-size: 11px; padding: 3px 8px;
+    border-radius: 99px;
+    border: 0.5px solid var(--color-border-tertiary);
+    color: var(--color-text-secondary);
+  }
+  .copyright-row {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 8px;
+    padding: 1.25rem 0 0.25rem;
+    font-size: 12px; color: var(--color-text-tertiary);
+  }
+  .copyright-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .copyright-links a { color: var(--color-text-tertiary); text-decoration: none; }
+  .copyright-links a:hover { color: var(--color-text-secondary); }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; display: inline-block; margin-right: 5px; }
+</style>
+
+<h2 class="sr-only">Website footer with four columns: brand info, product links, resources, and newsletter signup. Copyright row at bottom.</h2>
+
+<footer class="footer-wrap">
+  <div class="footer-grid">
+
+    <div>
+      <p class="brand-name">Meridian</p>
+      <p class="brand-desc">Tools for independent teams who move fast and build thoughtfully.</p>
+      <div class="social-row">
+        <a class="social-btn" href="#" aria-label="Twitter / X"><i class="ti ti-brand-x" aria-hidden="true"></i> X</a>
+        <a class="social-btn" href="#" aria-label="GitHub"><i class="ti ti-brand-github" aria-hidden="true"></i> GitHub</a>
+        <a class="social-btn" href="#" aria-label="LinkedIn"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> LinkedIn</a>
+      </div>
+    </div>
+
+    <div>
+      <p class="col-label">Product</p>
+      <ul class="col-links">
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Changelog</a></li>
+        <li><a href="#">Roadmap</a></li>
+        <li><a href="#">API</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="col-label">Resources</p>
+      <ul class="col-links">
+        <li><a href="#">Documentation</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Status</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="col-label">Stay in the loop</p>
+      <p style="font-size:13px; color:var(--color-text-secondary); margin:0 0 6px; line-height:1.5;">
+        Product updates, no noise. Unsubscribe any time.
+      </p>
+      <div class="newsletter-row">
+        <input type="email" placeholder="you@email.com" aria-label="Email address" />
+        <button>Subscribe</button>
+      </div>
+      <div class="badge-row">
+        <span class="badge"><i class="ti ti-mail" style="font-size:11px; vertical-align:-1px;" aria-hidden="true"></i> Monthly digest</span>
+        <span class="badge"><i class="ti ti-lock" style="font-size:11px; vertical-align:-1px;" aria-hidden="true"></i> No spam</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright-row">
+    <span>
+      <span class="status-dot" title="All systems operational"></span>
+      © 2026 Meridian, Inc. All rights reserved.
+    </span>
+    <div class="copyright-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Cookies</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
