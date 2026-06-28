@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Kennedy Kamau Njuguna</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index_home.html" class="nav-logo">Kennedy<span>.</span></a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="index_home.html">Home</a></li>
+      <li><a href="index_about.html">About</a></li>
+      <li><a href="index_projects.html">Projects</a></li>
+      <li><a href="index_contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page">
+    <div class="container">
+
+      <div class="page-hero">
+        <p class="eyebrow">Contact</p>
+        <h1>Let's build something<br>together.</h1>
+        <p>Whether you have a project brief or just want to explore ideas — I'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-grid section" style="padding-top:0; padding-bottom:6rem">
+
+        <!-- Form -->
+        <div>
+          <div id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="fname" name="fname" placeholder="Kennedy" autocomplete="given-name" required aria-required="true" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="lname" name="lname" placeholder="Kamau" autocomplete="family-name" required aria-required="true" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email address <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="hello@example.com" autocomplete="email" required aria-required="true" />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject <span class="req" aria-hidden="true">*</span></label>
+              <select id="subject" name="subject" required aria-required="true">
+                <option value="" disabled selected>Select a topic…</option>
+                <option value="freelance">Freelance project</option>
+                <option value="fulltime">Full-time role</option>
+                <option value="collab">Open-source collaboration</option>
+                <option value="mentorship">Mentorship / speaking</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Project budget (optional)</label>
+              <select id="budget" name="budget">
+                <option value="" disabled selected>Select a range…</option>
+                <option value="lt500">Under $500</option>
+                <option value="500-2k">$500 – $2,000</option>
+                <option value="2k-5k">$2,000 – $5,000</option>
+                <option value="5k+">$5,000+</option>
+                <option value="na">Not applicable</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" placeholder="Tell me about what you're building or looking for…" required aria-required="true"></textarea>
+            </div>
+
+            <div class="submit-row">
+              <button type="button" class="btn btn-primary" id="submitBtn" onclick="handleSubmit()">
+                Send message
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              </button>
+              <p>I reply within 24 hours, usually faster.</p>
+            </div>
+          </div>
+
+          <!-- Success message -->
+          <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+            <div class="tick" aria-hidden="true">🎉</div>
+            <h3>Message sent!</h3>
+            <p>Thanks for reaching out. I'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="contact-sidebar">
+
+          <!-- Live clock -->
+          <div class="info-card reveal">
+            <h3>Current time</h3>
+            <div id="live-clock" aria-live="off">--:--:--</div>
+            <div class="clock-zone">East Africa Time (EAT · UTC+3) · Nairobi</div>
+          </div>
+
+          <!-- Location -->
+          <div class="info-card reveal">
+            <h3>Location</h3>
+            <div class="loc-row">
+              <div class="loc-icon" aria-hidden="true">📍</div>
+              <div>
+                <div class="loc-label">Based in</div>
+                <div class="loc-value">Nairobi, Kenya</div>
+              </div>
+            </div>
+            <div class="loc-row">
+              <div class="loc-icon" aria-hidden="true">🌍</div>
+              <div>
+                <div class="loc-label">Works with</div>
+                <div class="loc-value">Teams worldwide</div>
+              </div>
+            </div>
+            <div class="loc-row">
+              <div class="loc-icon" aria-hidden="true">🗓️</div>
+              <div>
+                <div class="loc-label">Working hours</div>
+                <div class="loc-value">Mon–Fri, 8am–6pm EAT</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Availability -->
+          <div class="info-card reveal">
+            <h3>Availability</h3>
+            <div class="avail-row">
+              <span class="avail-label">Freelance projects</span>
+              <span class="avail-val">Open ✓</span>
+            </div>
+            <div class="avail-row">
+              <span class="avail-label">Full-time roles</span>
+              <span class="avail-val">Open ✓</span>
+            </div>
+            <div class="avail-row">
+              <span class="avail-label">Next available start</span>
+              <span class="avail-val limited">~ 2 weeks</span>
+            </div>
+          </div>
+
+          <!-- Social links -->
+          <div class="info-card reveal">
+            <h3>Find me online</h3>
+            <div class="social-links">
+              <a href="https://github.com/kenfrazier" target="_blank" rel="noopener" class="social-link">
+                <span class="sl-icon" aria-hidden="true">🐙</span>
+                GitHub
+                <span class="sl-handle">@kenfrazier</span>
+              </a>
+              <a href="#" class="social-link">
+                <span class="sl-icon" aria-hidden="true">💼</span>
+                LinkedIn
+                <span class="sl-handle">/in/kenfrazier</span>
+              </a>
+              <a href="#" class="social-link">
+                <span class="sl-icon" aria-hidden="true">🐦</span>
+                Twitter / X
+                <span class="sl-handle">@kenfrazier</span>
+              </a>
+              <a href="#" class="social-link">
+                <span class="sl-icon" aria-hidden="true">🎨</span>
+                Dribbble
+                <span class="sl-handle">@kenfrazier</span>
+              </a>
+              <a href="mailto:njugunakamaufrazier13@gmail.com" class="social-link">
+                <span class="sl-icon" aria-hidden="true">✉️</span>
+                Email
+                <span class="sl-handle">njugunakamaufrazier13@gmail.com</span>
+              </a>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer">
+          <p class="footer-copy">© 2026 Kennedy Kamau Njuguna. Built with HTML, CSS &amp; JS.</p>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index_home.html">Home</a>
+            <a href="index_about.html">About</a>
+            <a href="index_projects.html">Projects</a>
+            <a href="index_contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="nav.js"></script>
+  <script>
+    // Live clock — EAT (UTC+3)
+    function updateClock() {
+      const now = new Date();
+      const eat = new Date(now.toLocaleString('en-US', { timeZone: 'Africa/Nairobi' }));
+      const pad = n => String(n).padStart(2, '0');
+      document.getElementById('live-clock').textContent =
+        `${pad(eat.getHours())}:${pad(eat.getMinutes())}:${pad(eat.getSeconds())}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Form submit (demo)
+    function handleSubmit() {
+      const fname   = document.getElementById('fname').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!fname || !email || !subject || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('visible');
+    }
+  </script>
+</body>
+</html>
